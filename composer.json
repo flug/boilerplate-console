@@ -10,9 +10,7 @@
         "symfony/finder": "^3.3",
         "symfony/dependency-injection": "^3.3",
         "symfony/config": "3.4.x-dev",
-        "symfony/process": "3.4.x-dev",
-        "league/flysystem": "^1.1@dev",
-        "league/flysystem-aws-s3-v3": "^1.0@dev"
+        "symfony/process": "3.4.x-dev"
     },
     "license": "proprietary",
     "authors": [
