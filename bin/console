@@ -2,9 +2,5 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 $app = new \Symfony\Component\Console\Application();
-
-
-$app->addCommands((new AppKernel())->buildCommands());
-
-
-$app->run();
+$kernel = new AppKernel($app);
+$kernel->boot();

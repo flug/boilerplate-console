@@ -3,9 +3,12 @@
 class AppKernel
 {
     private $config;
+    private $application;
     
-    public function __construct()
-    {
+    public function __construct(
+        \Symfony\Component\Console\Application $application
+    ) {
+        $this->application = $application;
         $this->config = new \Clooder\DependenciesInjection\BootLoader($this);
         $this->loadConfiguration();
     }
@@ -20,7 +23,13 @@ class AppKernel
         return __DIR__;
     }
     
-    public function buildCommands(): array
+    public function boot()
+    {
+        $this->buildCommands();
+        $this->application->run();
+    }
+    
+    public function buildCommands()
     {
         $commands = [];
         foreach ($this->registerCommands() as $command) {
@@ -30,8 +39,7 @@ class AppKernel
             $command->setContainer($this->config->getContainer());
             $commands[] = $command;
         }
-        
-        return $commands;
+        $this->application->addCommands($commands);
     }
     
     private function registerCommands(): array
@@ -40,5 +48,10 @@ class AppKernel
             new \Clooder\Command\HelloCommand(),
         ];
         
+    }
+    
+    public function getApplication()
+    {
+        return $this->application;
     }
 }
