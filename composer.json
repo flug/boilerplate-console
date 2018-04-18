@@ -1,16 +1,15 @@
 {
-    "name": "Clooder/image-processor",
-    "description": "process image and send on S3 cdn",
+    "name": "Clooder/console-boilerplate",
+    "description": "a starter project for application cli",
     "type": "project",
     "require": {
-        "symfony/console": "^3.3",
-        "intervention/image": "^2.4",
+        "symfony/console": "^4.0",
         "incenteev/composer-parameter-handler": "^2.1",
-        "symfony/filesystem": "^3.3",
-        "symfony/finder": "^3.3",
-        "symfony/dependency-injection": "^3.3",
-        "symfony/config": "3.4.x-dev",
-        "symfony/process": "3.4.x-dev"
+        "symfony/filesystem": "^4.0",
+        "symfony/finder": "^4.0",
+        "symfony/dependency-injection": "^4.0",
+        "symfony/config": "^4.0",
+        "symfony/process": "^4.0"
     },
     "license": "proprietary",
     "authors": [
@@ -35,13 +34,13 @@
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters"
         ]
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "extra": {
         "incenteev-parameters": {
             "file": "config/parameters.yml"
         }
     },
     "require-dev": {
-        "symfony/var-dumper": "3.4.x-dev"
+        "symfony/var-dumper": "^4.0"
     }
 }
