@@ -17,6 +17,6 @@ class AppExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
-        $config = $this->processConfiguration(new Configuration(), $configs);
+        $this->processConfiguration(new Configuration(), $configs);
     }
 }
