@@ -1,6 +1,8 @@
 <?php
 
-class AppKernel
+namespace Clooder;
+
+class Kernel
 {
     private $config;
     private $application;
@@ -42,12 +44,9 @@ class AppKernel
         $this->application->addCommands($commands);
     }
     
-    private function registerCommands(): array
+    private function registerCommands(): iterable
     {
-        return [
-            new \Clooder\Command\HelloCommand(),
-        ];
-        
+        yield new \Clooder\Command\HelloCommand();
     }
     
     public function getApplication()
