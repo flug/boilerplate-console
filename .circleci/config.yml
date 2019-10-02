@@ -32,6 +32,13 @@ jobs:
       - checkout
       - <<: *composer
       - <<: *tests
+  release:
+      docker: 
+        - image: circleci/node:8
+      steps: 
+        - type: checkout 
+        - run: sudo npm install -g semantic-release
+        - run: semantic-release
 
 workflows: 
   version: 2 
