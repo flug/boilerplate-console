@@ -11,7 +11,7 @@ class BootLoader
     private $kernel;
     private $loader;
 
-    public function __construct(\AppKernel $kernel)
+    public function __construct(\Clooder\Kernel $kernel)
     {
         $this->kernel = $kernel;
 
