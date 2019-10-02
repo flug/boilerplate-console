@@ -21,10 +21,7 @@
     "autoload": {
         "psr-4": {
             "Clooder\\": "src/"
-        },
-        "files": [
-            "kernel/AppKernel.php"
-        ]
+        }
     },
     "scripts": {
         "post-install-cmd": [
@@ -41,6 +38,7 @@
         }
     },
     "require-dev": {
-        "symfony/var-dumper": "^4.0"
+        "symfony/var-dumper": "^4.0",
+        "phpspec/phpspec": "^5.1"
     }
 }
