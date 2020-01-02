@@ -1,5 +1,5 @@
 {
-    "name": "Clooder/console-boilerplate",
+    "name": "clooder/console-boilerplate",
     "description": "a starter project for application cli",
     "type": "project",
     "require": {
@@ -11,7 +11,7 @@
         "symfony/config": "^4.0",
         "symfony/process": "^4.0"
     },
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Flug",
