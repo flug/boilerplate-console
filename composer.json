@@ -3,13 +3,13 @@
     "description": "a starter project for application cli",
     "type": "project",
     "require": {
-        "symfony/console": "^4.0",
+        "symfony/console": "^4.1",
         "incenteev/composer-parameter-handler": "^2.1",
-        "symfony/filesystem": "^4.0",
-        "symfony/finder": "^4.0",
-        "symfony/dependency-injection": "^4.0",
-        "symfony/config": "^4.0",
-        "symfony/process": "^4.0"
+        "symfony/filesystem": "^4.1",
+        "symfony/finder": "^4.1",
+        "symfony/dependency-injection": "^4.1",
+        "symfony/config": "^4.1",
+        "symfony/process": "^4.1"
     },
     "license": "MIT",
     "authors": [
