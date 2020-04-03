@@ -1,7 +1,23 @@
 #!/usr/bin/env php
 <?php
+
+use Clooder\Kernel;
+
 require __DIR__ . '/../vendor/autoload.php';
 
-$app = new \Symfony\Component\Console\Application();
-$kernel = new \Clooder\Kernel($app);
-$kernel->boot();
+$input = new \Symfony\Component\Console\Input\ArgvInput();
+if (null !== $env = $input->getParameterOption(['--env', '-e'], null, true)) {
+    putenv('APP_ENV=' . $_SERVER['APP_ENV'] = $_ENV['APP_ENV'] = $env);
+}
+if ($input->hasParameterOption('--no-debug', true)) {
+    putenv('APP_DEBUG=' . $_SERVER['APP_DEBUG'] = $_ENV['APP_DEBUG'] = '0');
+}
+$envFile = __DIR__ . '/../.env';
+if (!file_exists($envFile)) {
+    touch($envFile);
+}
+$dotEnv = new Symfony\Component\Dotenv\Dotenv();
+$dotEnv->load($envFile);
+$kernel = new Kernel();
+$app = new \Clooder\Console\Application($kernel);
+$app->run($input);

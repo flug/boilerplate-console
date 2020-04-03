@@ -1,2 +1,4 @@
 parameters.yml
 vendor
+node_modules
+.env

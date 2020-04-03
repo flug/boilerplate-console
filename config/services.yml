@@ -1,1 +1,17 @@
+parameters:
 
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    Clooder\Command\:
+        resource: '../src/Command'
+        tags: ['console.command']
+
+    event_dispatcher:
+        class: Symfony\Component\EventDispatcher\EventDispatcher
+        public: true
+        tags:
+            - container.hot_path
