@@ -16,6 +16,7 @@ namespace Clooder;
 use Clooder\Kernel\BootKernel;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\Console\DependencyInjection\AddConsoleCommandPass;
+use Symfony\Component\DependencyInjection\Compiler\ResolveEnvPlaceholdersPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\EventDispatcher\DependencyInjection\RegisterListenersPass;
@@ -53,6 +54,7 @@ class Kernel
     {
         $container->addCompilerPass(new AddConsoleCommandPass());
         $container->addCompilerPass(new RegisterListenersPass());
+        $container->addCompilerPass(new ResolveEnvPlaceholdersPass());
         $configDir = $this->getProjectDir().'/config';
         $loader->load($configDir.'/*'.self::CONFIG_EXTS, 'glob');
     }
