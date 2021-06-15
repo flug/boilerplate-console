@@ -4,14 +4,12 @@
     "type": "project",
     "require": {
         "symfony/console": "^5.0",
-        "incenteev/composer-parameter-handler": "^2.1",
         "symfony/filesystem": "^5.0",
         "symfony/finder": "^5.0",
         "symfony/dependency-injection": "^5.0",
         "symfony/config": "^5.0",
         "symfony/process": "^5.0",
         "symfony/dotenv": "^5.0",
-        "symfony/debug": "^4.4",
         "symfony/error-handler": "^5.0",
         "redant/console": "^1.0"
     },
@@ -32,6 +30,6 @@
     "require-dev": {
         "symfony/var-dumper": "^4.0",
         "phpspec/phpspec": "^6.1",
-        "pedrotroller/php-cs-custom-fixer": "^2.20"
+        "friendsofphp/php-cs-fixer": "^3.0"
     }
 }
