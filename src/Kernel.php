@@ -1,5 +1,14 @@
 <?php
 
+/*
+ * This file is part of Boilerplate console project.
+ *
+ * (c) Flug <flugv1@gmail.com>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
 declare(strict_types=1);
 
 namespace Clooder;
@@ -14,8 +23,8 @@ use Symfony\Component\EventDispatcher\DependencyInjection\RegisterListenersPass;
 class Kernel
 {
     use BootKernel;
-    const VERSION = '1.0.x';
-    const NAME = 'CommandKonsole';
+    public const VERSION = '1.0.x';
+    public const NAME = 'CommandKonsole';
     private const CONFIG_EXTS = '.{php,xml,yaml,yml}';
     private $config;
     private $application;
