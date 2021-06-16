@@ -23,8 +23,6 @@ use Symfony\Component\EventDispatcher\DependencyInjection\RegisterListenersPass;
 class Kernel
 {
     use BootKernel;
-    public const VERSION = '1.0.x';
-    public const NAME = 'CommandKonsole';
     private const CONFIG_EXTS = '.{php,xml,yaml,yml}';
     private $config;
     private $application;
