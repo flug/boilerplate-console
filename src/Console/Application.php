@@ -32,7 +32,7 @@ class Application extends BaseApplication
     public function __construct(Kernel $kernel)
     {
         $this->kernel = $kernel;
-        parent::__construct(Kernel::NAME, Kernel::VERSION);
+        parent::__construct($_ENV['NAME'] ?? 'UNKNOWN', $_ENV['VERSION'] ?? 'UNKNOWN');
     }
 
     public function add(Command $command)
