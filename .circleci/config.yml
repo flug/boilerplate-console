@@ -76,7 +76,7 @@ workflows:
             - release-test
             -   release:
                     requires:
-                        - release-test
+                        - release
                         - tests
                         - tests-with-lowest-dependencies
                     filters:
