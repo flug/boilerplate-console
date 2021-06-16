@@ -6,7 +6,10 @@ orbs:
 
 composer: &composer
     run: |
-        composer install -vvv --profile --no-interaction
+        composer update -vvv --profile --no-interaction
+composer_with_lowest_dependencies: &composer_with_lowest_dependencies
+    run: |
+        composer update --prefer-lowest --prefer-stable
 
 tests: &tests
     run: |
@@ -15,57 +18,68 @@ tests: &tests
 
 jobs:
 
-    php-7-4:
+    tests:
+        parameters:
+            php-version:
+                type: string
         docker:
-            -   image: circleci/php:7.4
+            -   image: "circleci/php:<< parameters.php-version >>"
         steps:
             - checkout
-            - run: php --version
-            -   <<: *composer
-            -   <<: *tests
-    nightly:
-        docker:
-            -   image: circleci/php:latest
-        steps:
-            - checkout
-            - run: php --version
+            -   run: php --version
             -   <<: *composer
             -   <<: *tests
     release-test:
         executor:
             name: node/default
         steps:
-            - node/install
             - checkout
+            - node/install
             -   node/with-cache:
                     steps:
                         -   run: npm install
             -   run: node_modules/.bin/semantic-release --dry-run
 
+    tests-with-lowest-dependencies:
+        parameters:
+            php-version:
+                type: string
+        docker:
+            -   image: "circleci/php:<< parameters.php-version >>"
+        steps:
+            - checkout
+            -   <<: *composer_with_lowest_dependencies
+            -   <<: *tests
     release:
         executor:
             name: node/default
         steps:
-            - node/install
             - checkout
+            - node/install
             -   node/with-cache:
                     steps:
                         -   run: npm install
             -   run: node_modules/.bin/semantic-release
-
 workflows:
     version: 2
     PR:
         jobs:
-            - php-7-4
-            - nightly
+            -   tests:
+                    matrix:
+                        parameters:
+                            php-version: [ "7.4", "latest" ]
+
+            -   tests-with-lowest-dependencies:
+                    matrix:
+                        parameters:
+                            php-version: [ "7.4", "latest" ]
             - release-test
             -   release:
                     requires:
-                        - php-7-4
-                        - nightly
+                        - release-test
+                        - tests
+                        - tests-with-lowest-dependencies
                     filters:
                         branches:
                             only:
                                 - master
-
