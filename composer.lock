@@ -1408,16 +1408,16 @@
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.23.0",
+            "version": "v1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "eca0bf41ed421bed1b57c4958bab16aa86b757d0"
+                "reference": "4407588e0d3f1f52efb65fbe92babe41f37fe50c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/eca0bf41ed421bed1b57c4958bab16aa86b757d0",
-                "reference": "eca0bf41ed421bed1b57c4958bab16aa86b757d0",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/4407588e0d3f1f52efb65fbe92babe41f37fe50c",
+                "reference": "4407588e0d3f1f52efb65fbe92babe41f37fe50c",
                 "shasum": ""
             },
             "require": {
@@ -1434,12 +1434,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
@@ -1471,7 +1471,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.0"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.25.0"
             },
             "funding": [
                 {
@@ -1487,7 +1487,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-02-19T12:13:01+00:00"
+            "time": "2022-03-04T08:16:47+00:00"
         },
         {
             "name": "symfony/polyfill-php81",
@@ -1570,21 +1570,21 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.3.2",
+            "version": "v5.4.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "714b47f9196de61a196d86c4bad5f09201b307df"
+                "reference": "38a44b2517b470a436e1c944bf9b9ba3961137fb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/714b47f9196de61a196d86c4bad5f09201b307df",
-                "reference": "714b47f9196de61a196d86c4bad5f09201b307df",
+                "url": "https://api.github.com/repos/symfony/process/zipball/38a44b2517b470a436e1c944bf9b9ba3961137fb",
+                "reference": "38a44b2517b470a436e1c944bf9b9ba3961137fb",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.5",
-                "symfony/polyfill-php80": "^1.15"
+                "symfony/polyfill-php80": "^1.16"
             },
             "type": "library",
             "autoload": {
@@ -1612,7 +1612,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v5.3.2"
+                "source": "https://github.com/symfony/process/tree/v5.4.7"
             },
             "funding": [
                 {
@@ -1628,7 +1628,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-06-12T10:15:01+00:00"
+            "time": "2022-03-18T16:18:52+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -3559,5 +3559,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
