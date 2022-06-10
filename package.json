@@ -1,6 +1,6 @@
 {
   "name": "boilerplate-console",
   "dependencies": {
-    "semantic-release": "^17.2.3"
+    "semantic-release": "^19.0.3"
   }
 }
